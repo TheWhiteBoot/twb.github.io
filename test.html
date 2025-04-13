@@ -4,9 +4,15 @@
         <title>XSS test</title>
     </head>
     <body>
-        <p>&#42;</p>
+        <div id="wrapper"></div>
         <script>
-            alert(1)
+            let my_html = "";
+            for(let i = 0; i < 100; i++){
+                my_html += `<p>${i}: &#${i};</p>`;
+            }
+
+            let element = document.getElementById("wrapper");
+            element.innerHTML = my_html;
         </script>
     </body>
 </html>
