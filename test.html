@@ -11,6 +11,13 @@
                 my_html += `<p>${i}: &#${i};</p>`;
             }
 
+            let json_data = {}
+            for(let i = 0; i < 1000; i++){
+                let key = `&#${i};`
+                json_data[key] = i;
+            }
+            console.log(json_data);
+
             let element = document.getElementById("wrapper");
             element.innerHTML = my_html;
         </script>
